@@ -1,11 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulario de Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+
+    
+    <main class="cadastro-container">
+
+        <!-- Seção de apresentação -->
+        <section class="apresentacao">
+            <header>
+                <h1>Nexus</h1>                
+            </header>
+
+            <div class="apresentacao-conteudo">
+                <h2>Comece sua jornada conosco.</h2>
+                <p>
+                    Cadastre suas informações e aproveite todos
+                    os recursos da nossa plataforma.
+                </p>
+            </div>
+        </section>
+
+        <!-- Seção do formulário -->
+        <section class="cadastro">
+            <header class="cadastro-header">
+                <h2>Criar sua conta</h2>
+                <p>Preencha os dados abaixo para começar.</p>
+
+                <button id="botao-tema" type="button">☾ Tema escuro</button>
+            </header>
+
+            <form id="form-cadastro">
+
+                <fieldset>
+                    <legend>Dados pessoais</legend>
+
+                    <div class="campo">
+                        <label for="nome">Nome completo</label>
+                        <input 
+                        type="text" 
+                        id="nome" 
+                        name="nome" 
+                        placeholder="digite seu nome completo" 
+                        autocomplete="name" 
+                        required>                        
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <input 
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="exemplo@email.com"
+                        autocomplete="email"
+                        required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefone">Telefone</label>
+                        <input 
+                        type="tel"
+                        id="telefone"
+                        name="telefone"
+                        placeholder="(00) 00000-0000"
+                        autocomplete="tel"
+                        required>                                                
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Endereço</legend>
+
+                    <div class="campo">
+                        <label for="cep">CEP</label>
+                        <input 
+                        type="text"
+                        id="cep"
+                        name="cep"
+                        placeholder="00000-000"
+                        inputmode="numeric"
+                        maxlength="9"
+                        autocomplete="postal-code"
+                        required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="logradouro">Rua</label>
+                        <input 
+                        type="text" 
+                        name="logradouro" 
+                        id="logradouro"
+                        autocomplete="address-line1"
+                        required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="numero">Número</label>
+                        <input 
+                        type="text" 
+                        name="numero" 
+                        id="numero"
+                        required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="bairro">Bairro</label>
+                        <input 
+                        type="text" 
+                        name="bairro" 
+                        id="bairro"
+                        required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="cidade">Cidade</label>
+                        <input 
+                        type="text" 
+                        name="cidade" 
+                        id="cidade"
+                        autocomplete="address-level2"
+                        required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="estado">Estado (UF)</label>
+                        <input 
+                        type="text" 
+                        name="estado" 
+                        id="estado"
+                        maxlength="2"
+                        autocomplete="address-level1"
+                        required>
+                    </div>
+                </fieldset>
+
+                <button type="submit" id="btn-cadastrar">Criar conta</button>
+            </form>
+
+        </section>
+
+    </main>
     
 </body>
 </html>
