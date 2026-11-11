@@ -14,3 +14,17 @@ btnTema.addEventListener("click", () => {
     // Atualizar o texto do botao
     btnTema.textContent = novoTema === "dark" ? "✹ Tema claro" : "☾ Tema escuro";
 })
+
+// Restaura tema salvo no localStorage
+document.addEventListener("DOMContentLoaded", () => {
+    // Verifica se tem tema salvo
+    const temaSalvo = localStorage.getItem("tema");
+
+    // Se for dark. adiciona classe e altera o botão
+    if(temaSalvo === "dark"){
+        document.body.classList.add("dark");
+        btnTema.textContent = "✹ Tema claro";
+    }else {
+        btnTema.textContent = "☾ Tema escuro";
+    }
+})
