@@ -1,0 +1,399 @@
+
+/* =====================================
+   CONFIGURAÇÕES GERAIS
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: Arial, sans-serif;
+    color-scheme: light;
+
+    --fundo: #f5f5f5;
+    --card: #ffffff;
+    --texto: #222222;
+    --texto-secundario: #777777;
+    --borda: #dddddd;
+    --input: #ffffff;
+    --botao: #222222;
+    --texto-botao: #ffffff;
+    --hover: #eeeeee;
+}
+
+/* =====================================
+   TEMA ESCURO
+===================================== */
+
+body.dark {
+    color-scheme: dark;
+
+    --fundo: #121212;
+    --card: #1e1e1e;
+    --texto: #f5f5f5;
+    --texto-secundario: #aaaaaa;
+    --borda: #404040;
+    --input: #292929;
+    --botao: #f5f5f5;
+    --texto-botao: #121212;
+    --hover: #303030;
+}
+
+/* =====================================
+   PÁGINA
+===================================== */
+
+body {
+    min-height: 100vh;
+    background: var(--fundo);
+    color: var(--texto);
+    padding: 40px 20px;
+
+    font-family: Arial, sans-serif;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+/* =====================================
+   CONTAINER PRINCIPAL
+===================================== */
+
+.cadastro-container {
+    position: relative;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* =====================================
+   APRESENTAÇÃO
+===================================== */
+
+.apresentacao {
+    margin-bottom: 30px;
+}
+
+.apresentacao h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.apresentacao h2 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+.apresentacao p {
+    color: var(--texto-secundario);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* =====================================
+   ÁREA DO FORMULÁRIO
+===================================== */
+
+.cadastro {
+    background: var(--card);
+    padding: 30px;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* =====================================
+   CABEÇALHO DO FORMULÁRIO
+===================================== */
+
+.cadastro-header {
+    margin-bottom: 30px;
+}
+
+.cadastro-header h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.cadastro-header p {
+    color: var(--texto-secundario);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* =====================================
+   BOTÃO DE ALTERAÇÃO DE TEMA
+===================================== */
+
+#botao-tema {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 38px;
+    padding: 10px 16px;
+
+    background: var(--card);
+    color: var(--texto);
+
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* EFEITO AO PASSAR O MOUSE */
+
+#botao-tema:hover {
+    background: var(--hover);
+    border-color: var(--texto-secundario);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* EFEITO AO CLICAR */
+
+#botao-tema:active {
+    transform: scale(0.97);
+}
+
+/* ACESSIBILIDADE */
+
+#botao-tema:focus-visible {
+    outline: 2px solid var(--texto);
+    outline-offset: 3px;
+}
+
+/* =====================================
+   SEÇÕES DO FORMULÁRIO
+===================================== */
+
+fieldset {
+    border: none;
+    margin-bottom: 30px;
+    min-width: 0;
+}
+
+legend {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid var(--borda);
+}
+
+/* =====================================
+   ORGANIZAÇÃO DOS CAMPOS
+===================================== */
+
+#form-cadastro fieldset {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+/* =====================================
+   CAMPOS
+===================================== */
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+.campo label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--texto);
+}
+
+.campo input {
+    width: 100%;
+    padding: 12px;
+
+    background: var(--input);
+    color: var(--texto);
+
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* PLACEHOLDER */
+
+.campo input::placeholder {
+    color: var(--texto-secundario);
+}
+
+/* HOVER */
+
+.campo input:hover {
+    border-color: var(--texto-secundario);
+}
+
+/* FOCO */
+
+.campo input:focus {
+    border-color: var(--texto);
+    box-shadow: 0 0 0 2px var(--hover);
+}
+
+/* =====================================
+   CAMPOS QUE OCUPAM DUAS COLUNAS
+===================================== */
+
+.campo:has(#nome),
+.campo:has(#logradouro) {
+    grid-column: 1 / -1;
+}
+
+/* =====================================
+   BOTÃO CRIAR CONTA
+===================================== */
+
+#btn-cadastrar {
+    width: 100%;
+    padding: 14px;
+
+    background: var(--botao);
+    color: var(--texto-botao);
+
+    border: none;
+    border-radius: 6px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+#btn-cadastrar:hover {
+    opacity: 0.85;
+}
+
+#btn-cadastrar:active {
+    transform: scale(0.99);
+}
+
+#btn-cadastrar:focus-visible {
+    outline: 2px solid var(--texto);
+    outline-offset: 3px;
+}
+
+/* =====================================
+   RESPONSIVIDADE
+===================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 15px;
+    }
+
+    .apresentacao {
+        padding-top: 60px;
+    }
+
+    .apresentacao h1 {
+        font-size: 22px;
+        margin-bottom: 25px;
+    }
+
+    .apresentacao h2 {
+        font-size: 24px;
+    }
+
+    .apresentacao p {
+        font-size: 14px;
+    }
+
+    .cadastro {
+        padding: 20px;
+    }
+
+    .cadastro-header h2 {
+        font-size: 20px;
+    }
+
+    /* BOTÃO DE TEMA NO MOBILE */
+
+    #botao-tema {
+        top: 0;
+        right: 0;
+
+        min-height: 36px;
+        padding: 9px 13px;
+
+        font-size: 12px;
+    }
+
+    /* FORMULÁRIO EM UMA COLUNA */
+
+    #form-cadastro fieldset {
+        grid-template-columns: 1fr;
+    }
+
+    .campo:has(#nome),
+    .campo:has(#logradouro) {
+        grid-column: auto;
+    }
+}
+
+/* =====================================
+   PREFERÊNCIA POR MENOS ANIMAÇÕES
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
