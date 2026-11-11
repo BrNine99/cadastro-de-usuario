@@ -401,6 +401,8 @@ legend {
 /* MENSAGEM DE CADASTRO */
 
 #mensagem-cadastro {
+    margin-top: 20px;
+    padding: 12px;
     color: #16a34a;
     font-size: 14px;
     font-weight: 600;
