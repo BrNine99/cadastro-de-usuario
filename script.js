@@ -27,7 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }else {
         btnTema.textContent = "☾ Tema escuro";
     }
+
+    restaurarDados();
 })
+
+// BUSCA E PREENCHIMENTO AUTOMÁTICO DE ENDEREÇO
 
 // Ouvir o evento de quando o usuario sair do campo de CEP
 document.getElementById("cep").addEventListener("blur", (evento) => {
@@ -49,9 +53,49 @@ document.getElementById("cep").addEventListener("blur", (evento) => {
             document.getElementById("bairro").value = data.bairro;
             document.getElementById("cidade").value = data.localidade;
             document.getElementById("estado").value = data.uf;
+
+            salvarDados();
+
         }else {
             alert("CEP não encontrado.")
         }
     })
     .catch(error => console.error("Erro ao buscar CEP:", error));
 })
+
+//PERSISTENCIA DOS DADOS DO FORMULÁRIO
+
+// Captura o formulário
+const formulario = document.getElementById("form-cadastro");
+
+// Captura todos os campos do formulário
+const campos = formulario.querySelectorAll("input");
+
+// Função responsável por salvar as informações
+function salvarDados() {
+    const dados = {};
+
+    campos.forEach((campo) => {
+        dados[campo.name] = campo.value;
+    });
+
+    localStorage.setItem("dadosFormulario", JSON.stringify(dados));
+}
+
+// Detectando alterações nos campos
+campos.forEach((campo) => {
+    campo.addEventListener("input", salvarDados);
+});
+
+// Restaurando os dados ao carregar a página
+function restaurarDados() {
+    const dadosSalvos = localStorage.getItem("dadosFormulario");
+
+    if(dadosSalvos) {
+        const dados = JSON.parse(dadosSalvos);
+
+        campos.forEach((campo) => {
+            campo.value = dados[campo.name] ?? "";
+        });
+    }
+}
