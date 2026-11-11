@@ -397,3 +397,16 @@ legend {
         animation-duration: 0.01ms !important;
     }
 }
+
+/* MENSAGEM DE CADASTRO */
+
+#mensagem-cadastro {
+    color: #16a34a;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#mensagem-cadastro:empty {
+    display: none;
+}

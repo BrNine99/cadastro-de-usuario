@@ -99,3 +99,15 @@ function restaurarDados() {
         });
     }
 }
+
+// ADICIONA MENSAGEM DE CONFIRMAÇÃO DE CADASTRO
+
+// Captura o elemento da mensagem
+const mensagemCadastro = document.getElementById("mensagem-cadastro");
+
+// Escuta o envio do formulário
+formulario.addEventListener("submit", (evento) => {
+    evento.preventDefault();
+
+    mensagemCadastro.textContent = "Cadastro realizado com sucesso!";
+});
